@@ -356,8 +356,9 @@ Full-width banner style hero with centered content
     text-align: center;
 }
 
-/* Hide mobile break on desktop */
-.hero-banner-tagline .mobile-break {
+/* Hide mobile breaks on desktop */
+.hero-banner-tagline .mobile-break,
+.hero-banner-tagline .mobile-break-2 {
     display: none;
 }
 
@@ -4757,8 +4758,9 @@ Media queries for different screen sizes
         line-height: 1.5;
     }
     
-    /* Show mobile break on tablet and below */
-    .hero-banner-tagline .mobile-break {
+    /* Show mobile breaks on tablet and below */
+    .hero-banner-tagline .mobile-break,
+    .hero-banner-tagline .mobile-break-2 {
         display: block;
     }
     
@@ -5206,8 +5208,9 @@ Media queries for different screen sizes
         line-height: 1.5;
     }
     
-    /* Show mobile break on mobile */
-    .hero-banner-tagline .mobile-break {
+    /* Show mobile breaks on mobile */
+    .hero-banner-tagline .mobile-break,
+    .hero-banner-tagline .mobile-break-2 {
         display: block;
     }
     
