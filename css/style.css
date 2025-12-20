@@ -4903,6 +4903,7 @@ Media queries for different screen sizes
     
     /* Current roles mobile */
     .current-roles-grid {
+        display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 1rem;
         margin: 1.5rem 0 2rem 0;
@@ -5161,6 +5162,7 @@ Media queries for different screen sizes
     
     /* Current roles extra small mobile */
     .current-roles-grid {
+        display: grid;
         grid-template-columns: 1fr;
     }
     
