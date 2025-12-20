@@ -176,6 +176,13 @@ Fixed top navigation with backdrop blur and smooth transitions
     width: 100%;
 }
 
+/* Nav right container for theme toggle */
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
 /* LOGO STYLING */
 .logo {
     font-weight: 700;              /* Bold font weight */
@@ -4697,16 +4704,66 @@ Media queries for different screen sizes
     }
     
     .hero-banner-tagline {
-        font-size: 1rem;
+        font-size: 0.9rem;
         letter-spacing: 0.08em;
         margin-bottom: 0.75rem;
         white-space: normal;
         text-align: center;
+        padding: 0 1rem;
+        line-height: 1.5;
     }
     
     /* Show mobile break on tablet and below */
     .hero-banner-tagline .mobile-break {
         display: block;
+    }
+    
+    /* Theme toggle in nav on tablet */
+    .nav-theme-toggle {
+        position: static !important;
+        width: 26px !important;
+        height: 26px !important;
+        margin-left: 0.75rem;
+    }
+    
+    .nav-theme-toggle .theme-toggle-button {
+        width: 26px;
+        height: 26px;
+        border-width: 2px;
+    }
+    
+    .nav-theme-toggle .moon-icon,
+    .nav-theme-toggle .sun-icon {
+        font-size: 0.75rem;
+    }
+    
+    /* Hide fixed theme toggle on tablet */
+    .theme-toggle-label:not(.nav-theme-toggle) {
+        display: none;
+    }
+    
+    /* Theme toggle in nav on tablet */
+    .nav-theme-toggle {
+        position: static !important;
+        width: 26px !important;
+        height: 26px !important;
+        margin-left: 0.75rem;
+    }
+    
+    .nav-theme-toggle .theme-toggle-button {
+        width: 26px;
+        height: 26px;
+        border-width: 2px;
+    }
+    
+    .nav-theme-toggle .moon-icon,
+    .nav-theme-toggle .sun-icon {
+        font-size: 0.75rem;
+    }
+    
+    /* Hide fixed theme toggle on tablet */
+    .theme-toggle-label:not(.nav-theme-toggle) {
+        display: none;
     }
     
     .hero-banner-subtitle {
@@ -5097,15 +5154,46 @@ Media queries for different screen sizes
     }
     
     .hero-banner-tagline {
-        font-size: 0.85rem;
+        font-size: 0.75rem;
         margin-bottom: 0.5rem;
         white-space: normal;
         text-align: center;
+        padding: 0 0.5rem;
+        line-height: 1.5;
     }
     
     /* Show mobile break on mobile */
     .hero-banner-tagline .mobile-break {
         display: block;
+    }
+    
+    /* Reduce divider spacing on mobile */
+    .hero-banner-tagline .divider {
+        margin: 0 0.4rem;
+    }
+    
+    /* Theme toggle in nav on mobile */
+    .nav-theme-toggle {
+        position: static !important;
+        width: 24px !important;
+        height: 24px !important;
+        margin-left: 0.75rem;
+    }
+    
+    .nav-theme-toggle .theme-toggle-button {
+        width: 24px;
+        height: 24px;
+        border-width: 2px;
+    }
+    
+    .nav-theme-toggle .moon-icon,
+    .nav-theme-toggle .sun-icon {
+        font-size: 0.7rem;
+    }
+    
+    /* Hide fixed theme toggle on mobile */
+    .theme-toggle-label:not(.nav-theme-toggle) {
+        display: none;
     }
     
     .hero-banner-subtitle {
