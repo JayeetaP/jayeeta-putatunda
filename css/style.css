@@ -2895,6 +2895,116 @@ Advisory roles, mentorship, and organizational involvement
     padding: 0.4rem 0.9rem;
 }
 
+/* PODCAST SECTION */
+.podcast {
+    background: linear-gradient(135deg, rgba(43, 58, 103, 0.02) 0%, rgba(30, 42, 74, 0.04) 100%);
+}
+
+.podcast-announcement {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.5rem;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2.5rem;
+    background: var(--card-white);
+    border-radius: 1rem;
+    box-shadow: 0 4px 20px rgba(43, 58, 103, 0.1);
+    border: 1px solid rgba(43, 58, 103, 0.1);
+}
+
+.podcast-image-container {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    box-shadow: 0 4px 16px rgba(43, 58, 103, 0.15);
+}
+
+.podcast-teaser-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+.podcast-announcement-content {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.podcast-coming-soon-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--gradient);
+    color: white;
+    padding: 0.6rem 1.25rem;
+    border-radius: 2rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    width: fit-content;
+    margin: 0 auto;
+    box-shadow: 0 2px 8px rgba(43, 58, 103, 0.2);
+}
+
+.podcast-coming-soon-badge i {
+    font-size: 1rem;
+}
+
+.podcast-announcement-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin: 0;
+    line-height: 1.3;
+}
+
+.podcast-announcement-text {
+    font-size: 1.05rem;
+    color: var(--text-dark);
+    line-height: 1.7;
+    margin: 0;
+    opacity: 0.9;
+}
+
+.podcast-announcement-subtext {
+    font-size: 0.95rem;
+    color: var(--text-dark);
+    line-height: 1.6;
+    margin: 0;
+    opacity: 0.75;
+    font-style: italic;
+}
+
+/* Responsive adjustments for podcast section */
+@media (max-width: 768px) {
+    .podcast-announcement {
+        padding: 2rem 1.5rem;
+        gap: 2rem;
+    }
+    
+    .podcast-announcement-title {
+        font-size: 1.5rem;
+    }
+    
+    .podcast-announcement-text {
+        font-size: 1rem;
+    }
+    
+    .podcast-announcement-subtext {
+        font-size: 0.9rem;
+    }
+    
+    .podcast-coming-soon-badge {
+        font-size: 0.85rem;
+        padding: 0.5rem 1rem;
+    }
+}
+
 /* ADVISORY CONTENT CONTAINER */
 .advisory-container {
     display: grid;
