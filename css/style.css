@@ -2157,6 +2157,7 @@ Skills and technical capabilities showcase
     flex-direction: column;
     gap: 1.5rem;
     height: 100%; /* Ensure full height */
+    align-items: stretch; /* Stretch children to full height */
 }
 
 /* SPEAKING IMAGE CONTAINER */
@@ -2166,8 +2167,10 @@ Skills and technical capabilities showcase
     overflow: hidden;
     box-shadow: 0 4px 20px rgba(43, 58, 103, 0.15);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    flex: 1; /* Allow image to grow */
-    min-height: 300px; /* Minimum height for larger image */
+    flex: 1 1 0; /* Grow to fill available space, shrink if needed, base size 0 */
+    min-height: 0; /* Allow flexbox to control height */
+    max-height: 100%; /* Don't exceed container */
+    display: flex; /* Make container flex to fill height */
 }
 
 .speaking-image-container:hover {
@@ -2180,6 +2183,7 @@ Skills and technical capabilities showcase
     height: 100%;
     display: block;
     object-fit: cover;
+    object-position: top center; /* Show top portion to keep face visible */
     transition: transform 0.3s ease;
 }
 
@@ -2199,6 +2203,7 @@ Skills and technical capabilities showcase
     border: 2px solid rgba(43, 58, 103, 0.15);
     border-radius: 0.75rem;
     transition: all 0.3s ease;
+    flex-shrink: 0; /* Don't shrink this section */
 }
 
 .watch-talks-section:hover {
