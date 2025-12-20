@@ -5,6 +5,9 @@ document.addEventListener('DOMContentLoaded', function() {
     initNavigation();
     initContactForm();
     initYearFiltering();
+    initYearCollapsible();
+    initYouTubeThumbnails();
+    initTestimonialsTicker();
 });
 
 // ===== NAVIGATION FUNCTIONALITY =====
@@ -199,6 +202,34 @@ function initYearFiltering() {
     
     if (yearButtons.length === 0 || yearSections.length === 0) return;
     
+    // Initialize default view - show only 2025
+    const defaultYear = '2025';
+    yearSections.forEach(section => {
+        const sectionYear = section.getAttribute('data-year');
+        const isCollapsible = section.classList.contains('year-section-collapsible');
+        
+        if (sectionYear === defaultYear) {
+            // Show 2025 section
+            section.style.display = 'block';
+        } else {
+            // Hide all other sections
+            section.style.display = 'none';
+            if (isCollapsible) {
+                section.classList.remove('expanded');
+            }
+        }
+    });
+    
+    // Set 2025 button as active if no button is already active
+    const activeButton = document.querySelector('.year-nav-btn.active');
+    if (!activeButton || activeButton.getAttribute('data-year') === 'all') {
+        yearButtons.forEach(btn => btn.classList.remove('active'));
+        const defaultButton = document.querySelector(`.year-nav-btn[data-year="${defaultYear}"]`);
+        if (defaultButton) {
+            defaultButton.classList.add('active');
+        }
+    }
+    
     yearButtons.forEach(button => {
         button.addEventListener('click', function() {
             const targetYear = this.getAttribute('data-year');
@@ -209,17 +240,156 @@ function initYearFiltering() {
             
             // Show/hide year sections
             yearSections.forEach(section => {
+                const isCollapsible = section.classList.contains('year-section-collapsible');
+                
                 if (targetYear === 'all') {
-                    section.style.display = 'block';
+                    // Show all sections
+                    if (isCollapsible) {
+                        // For collapsible sections, show them expanded
+                        section.style.display = 'block';
+                        section.classList.add('expanded');
+                    } else {
+                        // 2025 section - always show
+                        section.style.display = 'block';
+                    }
                 } else {
                     const sectionYear = section.getAttribute('data-year');
                     if (sectionYear === targetYear) {
+                        // Show the selected year
                         section.style.display = 'block';
+                        if (isCollapsible) {
+                            section.classList.add('expanded');
+                        }
                     } else {
+                        // Hide other years
                         section.style.display = 'none';
+                        if (isCollapsible) {
+                            section.classList.remove('expanded');
+                        }
                     }
                 }
             });
         });
     });
+}
+
+// ===== COLLAPSIBLE YEAR SECTIONS =====
+function initYearCollapsible() {
+    const collapsibleHeaders = document.querySelectorAll('.year-header-clickable');
+    
+    collapsibleHeaders.forEach(header => {
+        header.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const section = this.closest('.year-section-collapsible');
+            if (!section) return;
+            
+            // Check current state - look at both class and computed style
+            const isCurrentlyVisible = section.style.display === 'block' || 
+                                      window.getComputedStyle(section).display !== 'none';
+            const hasExpandedClass = section.classList.contains('expanded');
+            
+            if (isCurrentlyVisible && hasExpandedClass) {
+                // Collapse - hide the section
+                section.classList.remove('expanded');
+                section.style.display = 'none';
+            } else {
+                // Expand - show the section
+                section.classList.add('expanded');
+                section.style.display = 'block';
+            }
+        });
+    });
+}
+
+// ===== YOUTUBE THUMBNAIL INITIALIZATION =====
+// Automatically swap logo images for YouTube thumbnails when a data-youtube-id is provided
+function initYouTubeThumbnails() {
+    const youtubeItems = document.querySelectorAll('[data-youtube-id]');
+    
+    if (!youtubeItems.length) return;
+    
+    youtubeItems.forEach(item => {
+        const videoId = item.getAttribute('data-youtube-id');
+        if (!videoId) return;
+        
+        const img = item.querySelector('img');
+        if (!img) return;
+        
+        const maxRes = `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
+        const highRes = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
+        
+        // Try max resolution first, fall back to high quality if not available
+        img.src = maxRes;
+        img.onerror = function() {
+            img.onerror = null;
+            img.src = highRes;
+        };
+    });
+}
+
+// ===== TESTIMONIALS TICKER =====
+// Auto-rotate testimonials every 5 seconds with dot navigation
+function initTestimonialsTicker() {
+    const carousel = document.querySelector('.testimonials-carousel');
+    const dotsContainer = document.querySelector('.testimonial-dots');
+    if (!carousel || !dotsContainer) return;
+    
+    const cards = carousel.querySelectorAll('.testimonial-card');
+    if (cards.length <= 1) return;
+    
+    let currentIndex = 0;
+    let autoRotateInterval;
+    
+    // Create dots
+    cards.forEach((_, index) => {
+        const dot = document.createElement('button');
+        dot.className = 'testimonial-dot' + (index === 0 ? ' active' : '');
+        dot.setAttribute('aria-label', `Go to testimonial ${index + 1}`);
+        dot.addEventListener('click', () => goToCard(index));
+        dotsContainer.appendChild(dot);
+    });
+    
+    const dots = dotsContainer.querySelectorAll('.testimonial-dot');
+    
+    function goToCard(index) {
+        // Hide current card
+        cards[currentIndex].classList.remove('active');
+        dots[currentIndex].classList.remove('active');
+        
+        // Update index
+        currentIndex = index;
+        
+        // Show new card
+        cards[currentIndex].classList.add('active');
+        dots[currentIndex].classList.add('active');
+        
+        // Reset timer
+        resetAutoRotate();
+    }
+    
+    function nextCard() {
+        const nextIndex = (currentIndex + 1) % cards.length;
+        goToCard(nextIndex);
+    }
+    
+    function startAutoRotate() {
+        autoRotateInterval = setInterval(nextCard, 5000);
+    }
+    
+    function stopAutoRotate() {
+        clearInterval(autoRotateInterval);
+    }
+    
+    function resetAutoRotate() {
+        stopAutoRotate();
+        startAutoRotate();
+    }
+    
+    // Start auto-rotation
+    startAutoRotate();
+    
+    // Pause on hover
+    carousel.addEventListener('mouseenter', stopAutoRotate);
+    carousel.addEventListener('mouseleave', startAutoRotate);
 }
