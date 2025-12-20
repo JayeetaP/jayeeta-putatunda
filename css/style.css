@@ -181,6 +181,49 @@ Fixed top navigation with backdrop blur and smooth transitions
     display: flex;
     align-items: center;
     gap: 1rem;
+    margin-left: auto;
+}
+
+/* Mobile nav layout - ensure theme toggle doesn't block menu */
+@media (max-width: 768px) {
+    .nav-content {
+        padding: 1rem 1rem;
+    }
+    
+    .nav-right {
+        margin-right: 0.5rem;
+        gap: 0.5rem;
+    }
+    
+    .logo {
+        flex: 1;
+        min-width: 0;
+        margin-right: 0.5rem;
+    }
+}
+
+/* On mobile, position theme toggle between logo and menu */
+@media (max-width: 768px) {
+    .nav-content {
+        justify-content: space-between;
+        padding: 1rem 1rem;
+    }
+    
+    .nav-right {
+        order: 2;
+        margin-left: auto;
+        margin-right: 0.5rem;
+    }
+    
+    .menu-toggle {
+        order: 3;
+    }
+    
+    .logo {
+        order: 1;
+        flex: 1;
+        min-width: 0;
+    }
 }
 
 /* LOGO STYLING */
@@ -5173,11 +5216,17 @@ Media queries for different screen sizes
     }
     
     /* Theme toggle in nav on mobile */
+    .nav-right {
+        margin-right: 0.5rem;
+        gap: 0.5rem;
+    }
+    
     .nav-theme-toggle {
         position: static !important;
         width: 24px !important;
         height: 24px !important;
-        margin-left: 0.75rem;
+        margin-left: 0;
+        flex-shrink: 0;
     }
     
     .nav-theme-toggle .theme-toggle-button {
@@ -5194,6 +5243,22 @@ Media queries for different screen sizes
     /* Hide fixed theme toggle on mobile */
     .theme-toggle-label:not(.nav-theme-toggle) {
         display: none;
+    }
+    
+    /* Ensure menu toggle has proper spacing and doesn't get blocked */
+    .menu-toggle {
+        margin-left: 0.5rem;
+        flex-shrink: 0;
+        z-index: 1000;
+    }
+    
+    /* Ensure nav content has proper spacing */
+    .nav-content {
+        gap: 0.5rem;
+    }
+    
+    .logo {
+        margin-right: 0.5rem;
     }
     
     .hero-banner-subtitle {
