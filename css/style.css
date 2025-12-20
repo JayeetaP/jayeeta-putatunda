@@ -305,6 +305,11 @@ Full-width banner style hero with centered content
     text-align: center;
 }
 
+/* Hide mobile break on desktop */
+.hero-banner-tagline .mobile-break {
+    display: none;
+}
+
 .hero-banner-tagline .divider {
     margin: 0 0.75rem;
     opacity: 0.6;
@@ -4695,6 +4700,13 @@ Media queries for different screen sizes
         font-size: 1rem;
         letter-spacing: 0.08em;
         margin-bottom: 0.75rem;
+        white-space: normal;
+        text-align: center;
+    }
+    
+    /* Show mobile break on tablet and below */
+    .hero-banner-tagline .mobile-break {
+        display: block;
     }
     
     .hero-banner-subtitle {
@@ -5087,6 +5099,13 @@ Media queries for different screen sizes
     .hero-banner-tagline {
         font-size: 0.85rem;
         margin-bottom: 0.5rem;
+        white-space: normal;
+        text-align: center;
+    }
+    
+    /* Show mobile break on mobile */
+    .hero-banner-tagline .mobile-break {
+        display: block;
     }
     
     .hero-banner-subtitle {
