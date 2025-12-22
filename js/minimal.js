@@ -316,6 +316,22 @@ function initYouTubeThumbnails() {
         const img = item.querySelector('img');
         if (!img) return;
         
+        // Get the current src from the attribute (not the property, which might be resolved)
+        const currentSrc = img.getAttribute('src') || '';
+        const trimmedSrc = currentSrc.trim();
+        
+        // Skip YouTube thumbnail replacement only if:
+        // 1. src exists and is not empty
+        // 2. src is a local/relative path (starts with 'assets/' or doesn't start with 'http')
+        // 3. src is not already a YouTube thumbnail URL
+        // Empty src ("") should get YouTube thumbnails
+        if (trimmedSrc !== '' && 
+            !trimmedSrc.includes('img.youtube.com') && 
+            (trimmedSrc.startsWith('assets/') || (!trimmedSrc.startsWith('http') && !trimmedSrc.startsWith('//')))) {
+            // This is a custom local image path, keep it
+            return;
+        }
+        
         const maxRes = `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
         const highRes = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
         
