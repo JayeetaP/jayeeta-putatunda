@@ -84,6 +84,11 @@ function initNavigation() {
                 const navbarHeight = navbar.offsetHeight;
                 const targetPosition = targetSection.offsetTop - navbarHeight;
                 
+                // Update URL hash without triggering scroll
+                if (targetId.startsWith('#')) {
+                    window.history.pushState(null, '', targetId);
+                }
+                
                 window.scrollTo({
                     top: targetPosition,
                     behavior: 'smooth'

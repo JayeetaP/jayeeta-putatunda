@@ -1090,7 +1090,7 @@ SECTION FOUNDATIONS
 Base styles for all content sections
 */
 .section {
-    padding: 5rem 0;               /* Generous vertical padding */
+    padding: 3rem 0 5rem 0;        /* Reduced top padding, keep bottom padding */
 }
 
 /* ALTERNATING SECTION BACKGROUND - Light blue tint */
@@ -2567,6 +2567,7 @@ Improved organization and aesthetics for speaking engagements
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 2rem;
+    margin-top: 0.5rem;
     margin-bottom: 3rem;
     padding: 0;
     max-width: 1600px;
@@ -2662,7 +2663,7 @@ Improved organization and aesthetics for speaking engagements
 
 .speaking-youtube-link {
     text-align: center;
-    margin: 1rem 0 2rem;
+    margin: 0rem 0 0rem;
 }
 
 .speaking-youtube-link .youtube-link-text {
