@@ -2725,7 +2725,12 @@
                         
                     </div>
                     
-                    <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                    <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
+                        <!-- Web3Forms configuration -->
+                        <input type="hidden" name="access_key" value="00f801b3-6bc4-46dc-a4bc-dc6eb3b8c159">
+                        <input type="hidden" name="redirect" value="https://jayeetap.github.io/jayeeta-putatunda/#home">
+                        <input type="hidden" name="from_name" value="Portfolio Contact Form">
+                        
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="name">Name</label>
@@ -2742,11 +2747,12 @@
                             <label for="subject">What's this about?</label>
                             <select id="subject" name="subject" required>
                                 <option value="">Select a topic</option>
-                                <option value="mentoring">🎯 Mentoring Session</option>
-                                <option value="speaking">🎤 Speaking Engagement</option>
-                                <option value="collaboration">🤝 Collaboration</option>
-                                <option value="advisory">💼 Advisory Opportunity</option>
-                                <option value="other">💬 General Inquiry</option>
+                                <option value="Mentoring Session">Mentoring Session</option>
+                                <option value="Speaking Engagement">Speaking Engagement</option>
+                                <option value="Collaboration">Collaboration</option>
+                                <option value="Advisory Opportunity">Advisory Opportunity</option>
+                                <option value="General Inquiry">General Inquiry</option>
+                                <option value="Other">Other</option>
                             </select>
                         </div>
                         
@@ -2754,10 +2760,6 @@
                             <label for="message">Message</label>
                             <textarea id="message" name="message" placeholder="Tell me about your project, question, or opportunity. The more details, the better I can help!" required></textarea>
                         </div>
-                        
-                        <!-- Hidden field for better form handling -->
-                        <input type="hidden" name="_next" value="https://jayeetap.github.io/jayeeta-putatunda/#contact">
-                        <input type="hidden" name="_subject" value="New Portfolio Contact Form Submission">
                         
                         <button type="submit" class="btn btn-primary btn-full">
                             <i class="fas fa-paper-plane"></i>

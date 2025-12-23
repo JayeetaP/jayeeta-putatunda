@@ -95,29 +95,49 @@ function initNavigation() {
 
 // ===== CONTACT FORM FUNCTIONALITY =====
 function initContactForm() {
-    const contactForm = document.querySelector('form');
+    const contactForm = document.getElementById('contact-form');
     
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
+    if (!contactForm) return;
+    
+    contactForm.addEventListener('submit', function(e) {
+        // Get form data for validation
+        const formData = new FormData(this);
+        const data = {
+            name: formData.get('name'),
+            email: formData.get('email'),
+            subject: formData.get('subject'),
+            message: formData.get('message')
+        };
+        
+        // Basic validation
+        if (!validateForm(data)) {
             e.preventDefault();
-            
-            // Get form data
-            const formData = new FormData(this);
-            const data = {
-                name: formData.get('name'),
-                email: formData.get('email'),
-                subject: formData.get('subject'),
-                message: formData.get('message')
-            };
-            
-            // Basic validation
-            if (validateForm(data)) {
-                // Show success message
-                showNotification('Thank you! Your message has been received.', 'success');
-                contactForm.reset();
-            }
-        });
-    }
+            return;
+        }
+        
+        // Set the subject line dynamically before submission
+        const subjectInput = document.createElement('input');
+        subjectInput.type = 'hidden';
+        subjectInput.name = 'subject';
+        subjectInput.value = `${data.subject} - From GitHub Website`;
+        this.appendChild(subjectInput);
+        
+        // Set the email to send to
+        const emailInput = document.createElement('input');
+        emailInput.type = 'hidden';
+        emailInput.name = 'to';
+        emailInput.value = 'jayeetap@outlook.com';
+        this.appendChild(emailInput);
+        
+        // Show loading state
+        const submitButton = this.querySelector('button[type="submit"]');
+        const originalButtonText = submitButton.innerHTML;
+        submitButton.disabled = true;
+        submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+        
+        // Form will submit normally to FormSubmit.co
+        // They will handle the email sending
+    });
 }
 
 // ===== FORM VALIDATION =====
