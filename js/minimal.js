@@ -85,7 +85,10 @@ function initNavigation() {
                 const targetPosition = targetSection.offsetTop - navbarHeight;
                 
                 // Update URL hash without triggering scroll
-                if (targetId.startsWith('#')) {
+                if (targetId === '#home') {
+                    // For home, use base URL without hash
+                    window.history.pushState(null, '', window.location.pathname);
+                } else if (targetId.startsWith('#')) {
                     window.history.pushState(null, '', targetId);
                 }
                 
