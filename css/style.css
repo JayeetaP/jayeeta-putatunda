@@ -583,24 +583,6 @@ Full-width banner style hero with centered content
     line-height: 1.4;
 }
 
-/* HERO SUBTITLE - Role description */
-.hero-subtitle {
-    font-size: 1rem;
-    color: var(--text-light);
-    margin-bottom: 2rem;
-    font-weight: 500;
-    line-height: 1.5;
-}
-
-/* HERO SUBTITLE */
-.hero-subtitle {
-    font-size: 1.1rem;
-    color: var(--accent);          /* Blue accent color */
-    margin-bottom: 1rem;
-    font-weight: 600;
-    text-transform: uppercase;     /* All caps for style */
-    letter-spacing: 0.02em;        /* Spaced letters */
-}
 
 /* HERO DESCRIPTION PARAGRAPHS */
 .hero-description {
@@ -1655,13 +1637,6 @@ Illustrated horizontal timeline for career path
     line-height: 1.3;
 }
 
-.role-note {
-    font-size: 0.7rem;
-    color: var(--accent);
-    font-weight: 600;
-    margin: 0;
-    font-style: italic;
-}
 
 .role-skills {
     display: flex;
@@ -2578,7 +2553,7 @@ Improved organization and aesthetics for speaking engagements
     display: flex;
     justify-content: center;
     gap: 3rem;
-    margin: 2rem 0 3rem;
+    margin: 2rem 0 1rem;
     flex-wrap: wrap;
 }
 
@@ -2683,6 +2658,24 @@ Improved organization and aesthetics for speaking engagements
     text-transform: uppercase;
     letter-spacing: 0.05em;
     margin-top: 0.5rem;
+}
+
+.speaking-youtube-link {
+    text-align: center;
+    margin: 1rem 0 2rem;
+}
+
+.speaking-youtube-link .youtube-link-text {
+    font-size: 0.9rem;
+    color: var(--accent);
+    text-decoration: none;
+    transition: all 0.2s ease;
+    font-weight: 500;
+}
+
+.speaking-youtube-link .youtube-link-text:hover {
+    color: var(--accent-light);
+    text-decoration: underline;
 }
 
 /* Year Navigation */
@@ -5889,7 +5882,6 @@ body {
 
 .hero-text .hero-label { animation-delay: 0.1s; }
 .hero-text .hero-title { animation-delay: 0.3s; }
-.hero-text .hero-subtitle { animation-delay: 0.5s; }
 .hero-text .hero-description:nth-of-type(1) { animation-delay: 0.7s; }
 .hero-text .hero-description:nth-of-type(2) { animation-delay: 0.9s; }
 .hero-text .hero-stats { animation-delay: 1.1s; }
@@ -6092,9 +6084,6 @@ body:has(.theme-toggle-checkbox:checked) .hero-title {
     color: #ffffff !important;
 }
 
-body:has(.theme-toggle-checkbox:checked) .hero-subtitle {
-    color: #60a5fa !important;  /* Brighter blue for visibility */
-}
 
 body:has(.theme-toggle-checkbox:checked) .hero-description {
     color: #e2e8f0 !important;
@@ -6547,6 +6536,14 @@ body:has(.theme-toggle-checkbox:checked) .speaking-stats .stat-number {
 
 body:has(.theme-toggle-checkbox:checked) .speaking-stats .stat-label {
     color: #9ca3af !important;
+}
+
+body:has(.theme-toggle-checkbox:checked) .speaking-youtube-link .youtube-link-text {
+    color: #60a5fa !important;
+}
+
+body:has(.theme-toggle-checkbox:checked) .speaking-youtube-link .youtube-link-text:hover {
+    color: #93c5fd !important;
 }
 
 body:has(.theme-toggle-checkbox:checked) .year-nav-btn {

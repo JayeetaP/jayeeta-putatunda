@@ -135,7 +135,7 @@ function initContactForm() {
         submitButton.disabled = true;
         submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
         
-        // Form will submit normally to FormSubmit.co
+        // Form will submit normally to Web3Forms
         // They will handle the email sending
     });
 }
