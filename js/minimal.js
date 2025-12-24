@@ -108,6 +108,8 @@ function initContactForm() {
     if (!contactForm) return;
     
     contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
         // Get form data for validation
         const formData = new FormData(this);
         const data = {
@@ -119,8 +121,14 @@ function initContactForm() {
         
         // Basic validation
         if (!validateForm(data)) {
-            e.preventDefault();
             return;
+        }
+        
+        // Get the subject select element and temporarily remove its name to avoid duplication
+        const subjectSelect = this.querySelector('select[name="subject"]');
+        const originalSubjectName = subjectSelect ? subjectSelect.getAttribute('name') : null;
+        if (subjectSelect) {
+            subjectSelect.removeAttribute('name');
         }
         
         // Set the subject line dynamically before submission
@@ -143,8 +151,58 @@ function initContactForm() {
         submitButton.disabled = true;
         submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
         
-        // Form will submit normally to Web3Forms
-        // They will handle the email sending
+        // Hide any previous success message
+        const successMessage = document.getElementById('form-success-message');
+        if (successMessage) {
+            successMessage.style.display = 'none';
+        }
+        
+        // Create new FormData with all form fields including hidden ones
+        const submitFormData = new FormData(contactForm);
+        
+        // Submit form to Web3Forms
+        fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            body: submitFormData
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                // Show success message
+                if (successMessage) {
+                    successMessage.style.display = 'flex';
+                    successMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                }
+                
+                // Reset form
+                contactForm.reset();
+            } else {
+                // Show error
+                showNotification('Sorry, there was an error sending your message. Please try again.', 'error');
+            }
+        })
+        .catch(error => {
+            console.error('Form submission error:', error);
+            showNotification('Sorry, there was an error sending your message. Please try again.', 'error');
+        })
+        .finally(() => {
+            // Restore the subject select name attribute
+            if (subjectSelect && originalSubjectName) {
+                subjectSelect.setAttribute('name', originalSubjectName);
+            }
+            
+            // Remove dynamically added hidden inputs
+            if (subjectInput && subjectInput.parentNode) {
+                subjectInput.parentNode.removeChild(subjectInput);
+            }
+            if (emailInput && emailInput.parentNode) {
+                emailInput.parentNode.removeChild(emailInput);
+            }
+            
+            // Re-enable submit button
+            submitButton.disabled = false;
+            submitButton.innerHTML = originalButtonText;
+        });
     });
 }
 
