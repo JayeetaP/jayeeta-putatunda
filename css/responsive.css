@@ -524,3 +524,16 @@
         transform: scale(0.98);
     }
 }
+
+/* Publications Grid Responsive */
+@media (max-width: 1199px) {
+    .publications-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 767px) {
+    .publications-grid {
+        grid-template-columns: 1fr;
+    }
+}
