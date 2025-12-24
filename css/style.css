@@ -1111,6 +1111,16 @@ Base styles for all content sections
     margin-bottom: 3rem;
 }
 
+/* JUDGING SECTION SPACING */
+.judging .section-header {
+    margin-bottom: 1rem; /* Reduced spacing for 2 lines */
+}
+
+.judging .advisory-container .section-divider:first-child {
+    margin-top: 0.5rem; /* Reduced top margin for first divider - total ~1.5rem = 2 lines */
+    margin-bottom: 1rem; /* Reduced bottom margin to 3 lines */
+}
+
 /* SECTION TITLE */
 .section-title {
     font-size: 2.5rem;             /* Large section heading */
