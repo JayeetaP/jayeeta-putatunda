@@ -3649,6 +3649,15 @@ Logo wall and feature cards for media appearances
     box-shadow: var(--shadow-medium);
 }
 
+div.media-featured-card:hover {
+    transform: none;
+    box-shadow: none;
+}
+
+div.media-featured-card a:hover {
+    opacity: 0.95;
+}
+
 .media-featured-thumb {
     width: 100%;
     aspect-ratio: 16 / 9;
@@ -3700,6 +3709,20 @@ Logo wall and feature cards for media appearances
     background: transparent;
     border: 1px solid var(--border-gray);
     color: var(--text-light);
+}
+
+a.media-cta-pill {
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+    position: relative;
+    z-index: 10;
+}
+
+a.media-cta-pill:hover {
+    opacity: 0.9;
+    transform: scale(1.05);
+    transition: opacity 0.2s ease, transform 0.2s ease;
 }
 
 /* LOGO BAND - compact strip for other media mentions */
