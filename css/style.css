@@ -3713,13 +3713,17 @@ div.media-featured-card a:hover {
 
 a.media-cta-pill {
     display: inline-block;
-    text-decoration: none;
+    text-decoration: none !important;
     cursor: pointer;
     position: relative;
     z-index: 10;
 }
 
-a.media-cta-pill:hover {
+a.media-cta-pill:hover,
+a.media-cta-pill:visited,
+a.media-cta-pill:active,
+a.media-cta-pill:focus {
+    text-decoration: none !important;
     opacity: 0.9;
     transform: scale(1.05);
     transition: opacity 0.2s ease, transform 0.2s ease;
