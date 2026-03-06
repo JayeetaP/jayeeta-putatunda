@@ -288,14 +288,14 @@ function initYearFiltering() {
     
     if (yearButtons.length === 0 || yearSections.length === 0) return;
     
-    // Initialize default view - show only 2025
-    const defaultYear = '2025';
+    // Initialize default view - show only 2026
+    const defaultYear = '2026';
     yearSections.forEach(section => {
         const sectionYear = section.getAttribute('data-year');
         const isCollapsible = section.classList.contains('year-section-collapsible');
         
         if (sectionYear === defaultYear) {
-            // Show 2025 section
+            // Show selected year section
             section.style.display = 'block';
         } else {
             // Hide all other sections
@@ -306,7 +306,7 @@ function initYearFiltering() {
         }
     });
     
-    // Set 2025 button as active if no button is already active
+    // Set default year button as active if no button is already active
     const activeButton = document.querySelector('.year-nav-btn.active');
     if (!activeButton || activeButton.getAttribute('data-year') === 'all') {
         yearButtons.forEach(btn => btn.classList.remove('active'));
@@ -335,7 +335,7 @@ function initYearFiltering() {
                         section.style.display = 'block';
                         section.classList.add('expanded');
                     } else {
-                        // 2025 section - always show
+                        // Non-collapsible section (e.g. 2026) - always show
                         section.style.display = 'block';
                     }
                 } else {

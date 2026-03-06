@@ -2779,6 +2779,12 @@ Improved organization and aesthetics for speaking engagements
     border-bottom: 1px solid var(--border-gray);
 }
 
+.speaking-date-group {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
 .speaking-date {
     display: flex;
     flex-direction: row;
@@ -2816,6 +2822,26 @@ Improved organization and aesthetics for speaking engagements
 
 .speaking-type i {
     color: var(--accent);
+}
+
+.speaking-upcoming-badge {
+    display: inline-flex;
+    align-items: center;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: var(--accent);
+    background: rgba(99, 102, 241, 0.12);
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.35rem;
+    border: 1px solid rgba(99, 102, 241, 0.35);
+}
+
+body:has(.theme-toggle-checkbox:checked) .speaking-upcoming-badge {
+    color: #93c5fd;
+    background: rgba(96, 165, 250, 0.12);
+    border-color: rgba(96, 165, 250, 0.35);
 }
 
 .speaking-venue {
