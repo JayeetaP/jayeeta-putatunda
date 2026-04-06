@@ -1,10 +1,14 @@
 // ===== MINIMAL JAVASCRIPT FOR ESSENTIAL FUNCTIONALITY =====
 
+/** Re-applies host org filter after year visibility changes (set by initOrgTypeFiltering). */
+let applySpeakingOrgFilter = function () {};
+
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize only essential components
     initNavigation();
     initContactForm();
     initYearFiltering();
+    initOrgTypeFiltering();
     initYearCollapsible();
     initYouTubeThumbnails();
     initTestimonialsTicker();
@@ -355,8 +359,60 @@ function initYearFiltering() {
                     }
                 }
             });
+            applySpeakingOrgFilter();
         });
     });
+}
+
+function initOrgTypeFiltering() {
+    const orgButtons = document.querySelectorAll('.org-nav-btn');
+    const speakingSection = document.getElementById('speaking');
+    if (!speakingSection || orgButtons.length === 0) return;
+
+    let currentOrg = 'all';
+
+    function applyOrgFilter() {
+        const yearSections = speakingSection.querySelectorAll('.year-section');
+        yearSections.forEach(section => {
+            if (section.style.display === 'none') return;
+
+            section.querySelectorAll('.speaking-grid').forEach(grid => {
+                const cards = grid.querySelectorAll('.speaking-card-compact');
+                const emptyMsg = grid.querySelector('.speaking-grid-empty-msg');
+                let visibleCount = 0;
+                cards.forEach(card => {
+                    const org = card.getAttribute('data-org-type') || '';
+                    const match = currentOrg === 'all' || org === currentOrg;
+                    if (match) {
+                        card.classList.remove('speaking-card-filtered-out');
+                        visibleCount++;
+                    } else {
+                        card.classList.add('speaking-card-filtered-out');
+                    }
+                });
+                if (emptyMsg) {
+                    emptyMsg.hidden = visibleCount > 0;
+                }
+            });
+        });
+    }
+
+    orgButtons.forEach(btn => {
+        btn.addEventListener('click', function () {
+            currentOrg = this.getAttribute('data-org-type') || 'all';
+            orgButtons.forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+            applyOrgFilter();
+        });
+    });
+
+    const activeBtn = document.querySelector('.org-nav-btn.active');
+    if (activeBtn) {
+        currentOrg = activeBtn.getAttribute('data-org-type') || 'all';
+    }
+
+    applySpeakingOrgFilter = applyOrgFilter;
+    applyOrgFilter();
 }
 
 // ===== COLLAPSIBLE YEAR SECTIONS =====
@@ -384,6 +440,7 @@ function initYearCollapsible() {
                 section.classList.add('expanded');
                 section.style.display = 'block';
             }
+            applySpeakingOrgFilter();
         });
     });
 }

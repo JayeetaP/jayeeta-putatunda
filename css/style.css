@@ -2443,8 +2443,10 @@ Conference talks and speaking engagements
 /* SPEAKING EVENTS GRID */
 .speaking-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* More compact responsive grid */
-    gap: 1rem;                     /* Compact space between cards */
+    /* auto-fill keeps columns capped at 360px so a lone visible card doesn't stretch full-width */
+    grid-template-columns: repeat(auto-fill, minmax(280px, 360px));
+    justify-content: start;
+    gap: 1rem;
 }
 
 /* INDIVIDUAL SPEAKING EVENT CARD */
@@ -2717,6 +2719,87 @@ Improved organization and aesthetics for speaking engagements
     border-color: var(--accent);
 }
 
+/* Speaking: host org type filter (below year nav) */
+.org-type-navigation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.45rem;
+    margin: -2rem auto 2.5rem;
+    flex-wrap: wrap;
+    max-width: 1100px;
+    padding: 0 0.5rem;
+}
+
+.org-type-nav-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--text-light);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 0.15rem;
+}
+
+.org-nav-btn {
+    padding: 0.45rem 0.85rem;
+    border: 2px solid var(--border-gray);
+    background: var(--card-white);
+    color: var(--text-light);
+    border-radius: 1.25rem;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 0.75rem;
+    transition: all 0.3s ease;
+}
+
+.org-nav-btn:hover,
+.org-nav-btn.active {
+    background: var(--primary);
+    color: #fff;
+    border-color: var(--primary);
+}
+
+.speaking-org-type {
+    color: var(--text-light);
+    font-weight: 500;
+}
+
+.speaking-card-compact.speaking-card-filtered-out {
+    display: none !important;
+}
+
+.speaking-grid-empty-msg {
+    grid-column: 1 / -1;
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--text-light);
+    padding: 1rem 0.5rem;
+    margin: 0;
+}
+
+.speaking-grid-empty-msg[hidden] {
+    display: none !important;
+}
+
+body:has(.theme-toggle-checkbox:checked) .org-nav-btn {
+    background: #374151;
+    border-color: #4b5563;
+    color: #d1d5db;
+}
+
+body:has(.theme-toggle-checkbox:checked) .org-nav-btn:hover,
+body:has(.theme-toggle-checkbox:checked) .org-nav-btn.active {
+    background: var(--accent);
+    color: #fff;
+    border-color: var(--accent);
+}
+
+body:has(.theme-toggle-checkbox:checked) .speaking-org-type {
+    color: #9ca3af;
+}
+
 /* Compact Speaking Card */
 .speaking-card-compact {
     background: var(--card-white);
@@ -2813,10 +2896,11 @@ Improved organization and aesthetics for speaking engagements
     display: flex;
     align-items: center;
     gap: 0.35rem;
-    background: var(--light-gray);
+    background: #dde3ef;
     padding: 0.35rem 0.65rem;
     border-radius: 1.25rem;
     font-size: 0.75rem;
+    font-weight: 700;
     color: var(--text-light);
 }
 
@@ -6656,8 +6740,9 @@ body:has(.theme-toggle-checkbox:checked) .speaking-header {
 }
 
 body:has(.theme-toggle-checkbox:checked) .speaking-type {
-    background: #4b5563 !important;
-    color: #d1d5db !important;
+    background: #374151 !important;
+    color: #e5e7eb !important;
+    font-weight: 700;
 }
 
 body:has(.theme-toggle-checkbox:checked) .speaking-type i {

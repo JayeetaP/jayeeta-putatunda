@@ -725,13 +725,25 @@
                 <button class="year-nav-btn" data-year="2021">2020-2021</button>
                 <button class="year-nav-btn" data-year="all">All Years</button>
             </div>
+
+            <div class="org-type-navigation" aria-label="Filter by host organization type">
+                <span class="org-type-nav-label">Event type</span>
+                <button type="button" class="org-nav-btn active" data-org-type="all">All</button>
+                <button type="button" class="org-nav-btn" data-org-type="conference">Conference</button>
+                <button type="button" class="org-nav-btn" data-org-type="university">University</button>
+                <button type="button" class="org-nav-btn" data-org-type="company">Company</button>
+                <button type="button" class="org-nav-btn" data-org-type="ngo">NGO</button>
+
+                <button type="button" class="org-nav-btn" data-org-type="community">Community</button>
+                <button type="button" class="org-nav-btn" data-org-type="media">Media</button>
+            </div>
             
             <!-- 2026 (latest months first; Upcoming on first three: May, Apr, TIBA Mar) -->
             <div class="year-section" data-year="2026">
                 <h3 class="year-header">2026</h3>
                 <div class="speaking-grid">
                     <!-- May 6–7 -->
-                    <div class="speaking-card-compact">
+                    <div class="speaking-card-compact" data-org-type="conference">
                         <div class="speaking-image-large">
                             <img src="assets/images/speaking2026/aihot100summit.png" alt="AI Hot 100 Summit">
                         </div>
@@ -744,8 +756,7 @@
                                 <span class="speaking-upcoming-badge">Upcoming</span>
                             </div>
                             <div class="speaking-type">
-                                <i class="fas fa-users"></i>
-                                <span>Panel</span>
+                                                                <span class="speaking-org-type">Conference</span>
                             </div>
                         </div>
                         <div class="speaking-content">
@@ -756,7 +767,7 @@
                         </div>
                     </div>
                     <!-- April 1 -->
-                    <div class="speaking-card-compact">
+                    <div class="speaking-card-compact" data-org-type="community">
                         <div class="speaking-image-large">
                             <img src="assets/images/speaking2026/aicircleAPR.png" alt="AI Circle X Carbon Arc">
                         </div>
@@ -766,11 +777,9 @@
                                     <span class="month">Apr</span>
                                     <span class="year">2026</span>
                                 </div>
-                                <span class="speaking-upcoming-badge">Upcoming</span>
                             </div>
                             <div class="speaking-type">
-                                <i class="fas fa-users"></i>
-                                <span>Panel</span>
+                                                                <span class="speaking-org-type">Community</span>
                             </div>
                         </div>
                         <div class="speaking-content">
@@ -781,7 +790,7 @@
                         </div>
                     </div>
                     <!-- March 27 -->
-                    <div class="speaking-card-compact">
+                    <div class="speaking-card-compact" data-org-type="university">
                         <div class="speaking-image-large">
                             <img src="assets/images/speaking2026/ColumbiaTIBAMar2026.png" alt="TIBA FinTech Columbia">
                         </div>
@@ -793,8 +802,7 @@
                                 </div>
                             </div>
                             <div class="speaking-type">
-                                <i class="fas fa-microphone"></i>
-                                <span>Keynote+Fireside Chat</span>
+                                                                <span class="speaking-org-type">University</span>
                             </div>
                         </div>
                         <div class="speaking-content">
@@ -805,7 +813,7 @@
                         </div>
                     </div>
                     <!-- March 11 -->
-                    <div class="speaking-card-compact">
+                    <div class="speaking-card-compact" data-org-type="conference">
                         <div class="speaking-image-large">
                             <img src="assets/images/speaking2026/techpulse2030march.png" alt="Tech Pulse 2030">
                         </div>
@@ -815,8 +823,7 @@
                                 <span class="year">2026</span>
                             </div>
                             <div class="speaking-type">
-                                <i class="fas fa-users"></i>
-                                <span>Panel</span>
+                                                                <span class="speaking-org-type">Conference</span>
                             </div>
                         </div>
                         <div class="speaking-content">
@@ -827,7 +834,7 @@
                         </div>
                     </div>
                     <!-- March 10 -->
-                    <div class="speaking-card-compact">
+                    <div class="speaking-card-compact" data-org-type="ngo">
                         <div class="speaking-image-large">
                             <img src="assets/images/speaking2026/UNWomenmarch2026.jpeg" alt="UN Women CSW70">
                         </div>
@@ -837,8 +844,7 @@
                                 <span class="year">2026</span>
                             </div>
                             <div class="speaking-type">
-                                <i class="fas fa-microphone"></i>
-                                <span>Panel</span>
+                                                                <span class="speaking-org-type">NGO</span>
                             </div>
                         </div>
                         <div class="speaking-content">
@@ -849,7 +855,7 @@
                         </div>
                     </div>
                     <!-- January -->
-                    <div class="speaking-card-compact">
+                    <div class="speaking-card-compact" data-org-type="conference">
                         <div class="speaking-image-large">
                             <img src="assets/images/speaking2025/icdmai2026.jpeg" alt="ICDMAI 2026">
                         </div>
@@ -859,8 +865,7 @@
                                 <span class="year">2026</span>
                             </div>
                             <div class="speaking-type">
-                                <i class="fas fa-chalkboard-teacher"></i>
-                                <span>Tech Tutorial</span>
+                                                                <span class="speaking-org-type">Conference</span>
                             </div>
                         </div>
                         <div class="speaking-content">
@@ -870,6 +875,8 @@
                             <a href="https://www.linkedin.com/feed/update/urn:li:activity:7401303070594277376/" target="_blank" rel="noopener noreferrer" class="speaking-link">View Details <i class="fas fa-external-link-alt"></i></a>
                         </div>
                     </div>
+
+                    <p class="speaking-grid-empty-msg" hidden>No engagements match this event type for this year.</p>
                 </div>
             </div>
 
@@ -880,7 +887,7 @@
                     <i class="fas fa-chevron-down year-toggle-icon"></i>
                 </h3>
                 <div class="speaking-grid">
-                    <div class="speaking-card-compact">
+                    <div class="speaking-card-compact" data-org-type="conference">
                         <div class="speaking-image-large">
                             <img src="assets/images/speaking2025/aisummitnyc2025.jpeg" alt="The AI Summit Series New York 2025">
                         </div>
@@ -890,8 +897,7 @@
                                 <span class="year">2025</span>
                             </div>
                             <div class="speaking-type">
-                                <i class="fas fa-users"></i>
-                                <span>Panel</span>
+                                                                <span class="speaking-org-type">Conference</span>
                             </div>
                         </div>
                         <div class="speaking-content">
@@ -901,7 +907,7 @@
                             <a href="https://www.linkedin.com/posts/jayeeta-putatunda_fintech-aiinfrastructure-enterpriseai-activity-7407077112450482186-_izr" target="_blank" rel="noopener noreferrer" class="speaking-link">View Details <i class="fas fa-external-link-alt"></i></a>
                         </div>
                     </div>
-                    <div class="speaking-card-compact">
+                    <div class="speaking-card-compact" data-org-type="conference">
                         <div class="speaking-image-large">
                             <img src="assets/images/speaking2025/women in gen ai nyc.jpeg" alt="WomenInGenAI Summit NYC">
                         </div>
@@ -911,8 +917,7 @@
                                 <span class="year">2025</span>
                             </div>
                             <div class="speaking-type">
-                                <i class="fas fa-users"></i>
-                                <span>Panel</span>
+                                                                <span class="speaking-org-type">Conference</span>
                             </div>
                         </div>
                         <div class="speaking-content">
@@ -922,7 +927,7 @@
                             <a href="https://www.linkedin.com/posts/jayeeta-putatunda_womeningenai-ai-womeningenai-activity-7401817463790772224-Y1lE" target="_blank" rel="noopener noreferrer" class="speaking-link">View Details <i class="fas fa-external-link-alt"></i></a>
                         </div>
                     </div>
-                    <div class="speaking-card-compact">
+                    <div class="speaking-card-compact" data-org-type="university">
                         <div class="speaking-image-large">
                             <img src="assets/images/speaking2025/pacenovember.jpeg" alt="Pace University">
                         </div>
@@ -932,8 +937,7 @@
                                 <span class="year">2025</span>
                             </div>
                             <div class="speaking-type">
-                                <i class="fas fa-chalkboard-teacher"></i>
-                                <span>Guest Lecture</span>
+                                                                <span class="speaking-org-type">University</span>
                             </div>
                         </div>
                         <div class="speaking-content">
@@ -943,7 +947,7 @@
                             <a href="https://www.linkedin.com/posts/jayeeta-putatunda_enterpriseai-aiagents-productionai-activity-7396219983262973952-ixR-" target="_blank" rel="noopener noreferrer" class="speaking-link">View Details <i class="fas fa-external-link-alt"></i></a>
                         </div>
                     </div>
-                    <div class="speaking-card-compact">
+                    <div class="speaking-card-compact" data-org-type="company">
                         <div class="speaking-image-large">
                             <img src="assets/images/speaking2025/onesixone.jpeg" alt="Enterprise AI Summit">
                         </div>
@@ -953,8 +957,7 @@
                                 <span class="year">2025</span>
                             </div>
                             <div class="speaking-type">
-                                <i class="fas fa-users"></i>
-                                <span>Panel</span>
+                                                                <span class="speaking-org-type">Company</span>
                             </div>
                         </div>
                         <div class="speaking-content">
@@ -964,7 +967,7 @@
                             <a href="https://www.linkedin.com/posts/jayeeta-putatunda_aiexperiencefromthefield-enterpriseai-aistrategy-activity-7380977546173042688-rVdH" target="_blank" rel="noopener noreferrer" class="speaking-link">View Details <i class="fas fa-external-link-alt"></i></a>
                         </div>
                     </div>
-                    <div class="speaking-card-compact">
+                    <div class="speaking-card-compact" data-org-type="community">
                         <div class="speaking-image-large">
                             <img src="assets/images/speaking2025/encubay.jpeg" alt="Encubay & Products by Women">
                         </div>
@@ -974,8 +977,7 @@
                                 <span class="year">2025</span>
                             </div>
                             <div class="speaking-type">
-                                <i class="fas fa-users"></i>
-                                <span>Panel</span>
+                                                                <span class="speaking-org-type">Community</span>
                             </div>
                         </div>
                         <div class="speaking-content">
@@ -985,7 +987,7 @@
                             <a href="https://www.linkedin.com/posts/jayeeta-putatunda_womenleadingchange-ai-thewealthshift-activity-7374817957631193088-mTn4" target="_blank" rel="noopener noreferrer" class="speaking-link">View Details <i class="fas fa-external-link-alt"></i></a>
                         </div>
                     </div>
-                    <div class="speaking-card-compact">
+                    <div class="speaking-card-compact" data-org-type="community">
                         <div class="speaking-image-large">
                             <img src="assets/images/speaking2025/awaai.jpeg" alt="AwaAI Event">
                         </div>
@@ -995,8 +997,7 @@
                                 <span class="year">2025</span>
                             </div>
                             <div class="speaking-type">
-                                <i class="fas fa-microphone"></i>
-                                <span>Tech Tutorial</span>
+                                                                <span class="speaking-org-type">Community</span>
                             </div>
                         </div>
                         <div class="speaking-content">
@@ -1006,7 +1007,7 @@
                             <a href="https://www.linkedin.com/posts/padminisoni-ai_awaai-womeninai-responsibleai-activity-7374155079966216192-ybRc" target="_blank" rel="noopener noreferrer" class="speaking-link">View Details <i class="fas fa-external-link-alt"></i></a>
                         </div>
                     </div>
-                    <div class="speaking-card-compact">
+                    <div class="speaking-card-compact" data-org-type="community">
                         <div class="speaking-image-large">
                             <img src="assets/images/speaking2025/waipeakskill.jpeg" alt="Women in AI Event">
                         </div>
@@ -1016,8 +1017,7 @@
                                 <span class="year">2025</span>
                             </div>
                             <div class="speaking-type">
-                                <i class="fas fa-users"></i>
-                                <span>Panel</span>
+                                                                <span class="speaking-org-type">Community</span>
                             </div>
                         </div>
                         <div class="speaking-content">
@@ -1027,7 +1027,7 @@
                             <a href="https://www.linkedin.com/posts/jayeeta-putatunda_womeninai-aieducation-agenticai-activity-7369738621916065792-0z4c" target="_blank" rel="noopener noreferrer" class="speaking-link">View Details <i class="fas fa-external-link-alt"></i></a>
                         </div>
                     </div>
-                    <div class="speaking-card-compact">
+                    <div class="speaking-card-compact" data-org-type="conference">
                         <div class="speaking-image-large">
                             <img src="assets/images/speaking2025/chaiandai.jpeg" alt="Women in AI Event">
                         </div>
@@ -1037,8 +1037,7 @@
                                 <span class="year">2025</span>
                             </div>
                             <div class="speaking-type">
-                                <i class="fas fa-users"></i>
-                                <span>Panel</span>
+                                                                <span class="speaking-org-type">Conference</span>
                             </div>
                         </div>
                         <div class="speaking-content">
@@ -1048,7 +1047,7 @@
                             <a href="https://www.linkedin.com/posts/areganti_breaking-for-the-first-time-were-hosting-activity-7371731715897073664-bwjG" target="_blank" rel="noopener noreferrer" class="speaking-link">View Details <i class="fas fa-external-link-alt"></i></a>
                         </div>
                     </div>
-                    <div class="speaking-card-compact">
+                    <div class="speaking-card-compact" data-org-type="company">
                         <div class="speaking-image-large">
                             <img src="assets/images/speaking2025/fiddler.jpeg" alt="AI Event">
                         </div>
@@ -1058,8 +1057,7 @@
                                 <span class="year">2025</span>
                             </div>
                             <div class="speaking-type">
-                                <i class="fas fa-microphone"></i>
-                                <span>Guest Interview</span>
+                                                                <span class="speaking-org-type">Company</span>
                             </div>
                         </div>
                         <div class="speaking-content">
@@ -1069,7 +1067,7 @@
                             <a href="https://www.linkedin.com/posts/jayeeta-putatunda_%F0%9D%97%94%F0%9D%97%B4%F0%9D%97%B2%F0%9D%97%BB%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%B0-%F0%9D%97%94%F0%9D%97%9C-%F0%9D%97%BC%F0%9D%97%B3%F0%9D%97%B3%F0%9D%97%B2%F0%9D%97%BF%F0%9D%98%80-%F0%9D%98%81%F0%9D%97%AE%F0%9D%97%BB%F0%9D%97%B4-activity-7361557437386039298-SPZN" target="_blank" rel="noopener noreferrer" class="speaking-link">View Details <i class="fas fa-external-link-alt"></i></a>
                         </div>
                     </div>
-                    <div class="speaking-card-compact">
+                    <div class="speaking-card-compact" data-org-type="conference">
                         <div class="speaking-image-large">
                             <img src="assets/images/speaking2025/ai4 vegas aug.jpeg" alt="AI4 Event">
                         </div>
@@ -1079,8 +1077,7 @@
                                 <span class="year">2025</span>
                             </div>
                             <div class="speaking-type">
-                                <i class="fas fa-microphone"></i>
-                                <span>Tech Talk</span>
+                                                                <span class="speaking-org-type">Conference</span>
                             </div>
                         </div>
                         <div class="speaking-content">
@@ -1090,7 +1087,7 @@
                             <a href="https://www.linkedin.com/posts/ai4_were-excited-to-welcome-jayeeta-putatunda-activity-7345783240395259906-ggGe" target="_blank" rel="noopener noreferrer" class="speaking-link">View Details <i class="fas fa-external-link-alt"></i></a>
                         </div>
                     </div>
-                    <div class="speaking-card-compact">
+                    <div class="speaking-card-compact" data-org-type="conference">
                         <div class="speaking-image-large">
                             <img src="assets/images/speaking2025/raise paris.jpeg" alt="RAISE Summit Paris 2025">
                         </div>
@@ -1100,8 +1097,7 @@
                                 <span class="year">2025</span>
                             </div>
                             <div class="speaking-type">
-                                <i class="fas fa-globe"></i>
-                                <span>Summit</span>
+                                                                <span class="speaking-org-type">Conference</span>
                             </div>
                         </div>
                         <div class="speaking-content">
@@ -1112,7 +1108,7 @@
                         </div>
                     </div>
                         
-                    <div class="speaking-card-compact">
+                    <div class="speaking-card-compact" data-org-type="company">
                         <div class="speaking-image-large">
                             <img src="assets/images/speaking2025/datacampradarai.jpeg" alt="DataCamp Radar">
                         </div>
@@ -1122,8 +1118,7 @@
                                 <span class="year">2025</span>
                             </div>
                             <div class="speaking-type">
-                                <i class="fas fa-users"></i>
-                                <span>Panel</span>
+                                                                <span class="speaking-org-type">Company</span>
                             </div>
                         </div>
                         <div class="speaking-content">
@@ -1134,7 +1129,7 @@
                         </div>
                     </div>
                     
-                    <div class="speaking-card-compact">
+                    <div class="speaking-card-compact" data-org-type="conference">
                         <div class="speaking-image-large">
                             <img src="assets/images/speaking2025/aifurnaceaihot100.jpeg" alt="AI Hot 100">
                         </div>
@@ -1144,8 +1139,7 @@
                                 <span class="year">2025</span>
                             </div>
                             <div class="speaking-type">
-                                <i class="fas fa-microphone"></i>
-                                <span>Panel</span>
+                                                                <span class="speaking-org-type">Conference</span>
                             </div>
                         </div>
                         <div class="speaking-content">
@@ -1155,7 +1149,7 @@
                             <a href="https://www.linkedin.com/posts/the-ai-furnace_aihot100-aifurnace-aihot100-activity-7343397514017927169-wnAR" target="_blank" rel="noopener noreferrer" class="speaking-link">View Details <i class="fas fa-external-link-alt"></i></a>
                         </div>
                     </div>
-                    <div class="speaking-card-compact">
+                    <div class="speaking-card-compact" data-org-type="conference">
                         <div class="speaking-image-large">
                             <img src="assets/images/speaking2025/aitechpulse ny.jpeg" alt="NY Tech Week">
                         </div>
@@ -1165,8 +1159,7 @@
                                 <span class="year">2025</span>
                             </div>
                             <div class="speaking-type">
-                                <i class="fas fa-globe"></i>
-                                <span>Summit</span>
+                                                                <span class="speaking-org-type">Conference</span>
                             </div>
                         </div>
                         <div class="speaking-content">
@@ -1177,7 +1170,7 @@
                             <a href="https://www.linkedin.com/posts/jayeeta-putatunda_nytechweek-nytechweek-responsibleai-activity-7335669459073863680-wI_o" target="_blank" rel="noopener noreferrer" class="speaking-link">View Details <i class="fas fa-external-link-alt"></i></a>
                         </div>
                     </div>
-                    <div class="speaking-card-compact">
+                    <div class="speaking-card-compact" data-org-type="conference">
                         <div class="speaking-image-large">
                             <img src="assets/images/speaking2025/𝐓𝐡𝐞 𝐀𝐈 & 𝐅𝐢𝐧𝐚𝐧𝐜𝐞 𝐂𝐨𝐧𝐟𝐞𝐫𝐞𝐧𝐜𝐞.jpeg" alt="AI in Finance">
                         </div>
@@ -1187,8 +1180,7 @@
                                 <span class="year">2025</span>
                             </div>
                             <div class="speaking-type">
-                                <i class="fas fa-microphone"></i>
-                                <span>Panel</span>
+                                                                <span class="speaking-org-type">Conference</span>
                             </div>
                         </div>
                         <div class="speaking-content">
@@ -1198,7 +1190,7 @@
                             <a href="https://www.linkedin.com/posts/jayeeta-putatunda_aiinfinance-autonomousagents-genai-activity-7337458765329293312-Ms2C" target="_blank" rel="noopener noreferrer" class="speaking-link">View Details <i class="fas fa-external-link-alt"></i></a>
                         </div>
                     </div>
-                    <div class="speaking-card-compact">
+                    <div class="speaking-card-compact" data-org-type="conference">
                         <div class="speaking-image-large">
                             <img src="assets/images/speaking2025/wids nyc.jpeg" alt="WiDS NYC">
                         </div>
@@ -1208,8 +1200,7 @@
                                 <span class="year">2025</span>
                             </div>
                             <div class="speaking-type">
-                                <i class="fas fa-users"></i>
-                                <span>Tech Talk</span>
+                                                                <span class="speaking-org-type">Conference</span>
                             </div>
                         </div>
                         <div class="speaking-content">
@@ -1219,7 +1210,7 @@
                             <a href="https://www.linkedin.com/posts/niki-karanikola_wids-widsnyc-womenindatascience-ugcPost-7326228007562395648-MHhV" target="_blank" rel="noopener noreferrer" class="speaking-link">View Details <i class="fas fa-external-link-alt"></i></a>
                         </div>
                     </div>
-                    <div class="speaking-card-compact">
+                    <div class="speaking-card-compact" data-org-type="company">
                         <div class="speaking-image-large">
                             <img src="assets/images/speaking2025/caederireland .jpeg" alt="CeADAR Ireland">
                         </div>
@@ -1229,8 +1220,7 @@
                                 <span class="year">2025</span>
                             </div>
                             <div class="speaking-type">
-                                <i class="fas fa-users"></i>
-                                <span>Panel</span>
+                                                                <span class="speaking-org-type">Company</span>
                             </div>
                         </div>
                         <div class="speaking-content">
@@ -1241,7 +1231,7 @@
                         </div>
                     </div>
                     
-                    <div class="speaking-card-compact">
+                    <div class="speaking-card-compact" data-org-type="conference">
                         <div class="speaking-image-large">
                             <img src="assets/images/speaking2025/womentech2025.jpeg" alt="WomenTech Global Conference 2025">
                         </div>
@@ -1251,8 +1241,7 @@
                                 <span class="year">2025</span>
                             </div>
                             <div class="speaking-type">
-                                <i class="fas fa-microphone"></i>
-                                <span>Keynote</span>
+                                                                <span class="speaking-org-type">Conference</span>
                             </div>
                         </div>
                         <div class="speaking-content">
@@ -1262,7 +1251,7 @@
                             <a href="https://www.linkedin.com/posts/jayeeta-putatunda_wtgc2025-womenintech-causalai-activity-7330939340597907456-AeDF" target="_blank" rel="noopener noreferrer" class="speaking-link">View Details <i class="fas fa-external-link-alt"></i></a>
                         </div>
                     </div>
-                    <div class="speaking-card-compact">
+                    <div class="speaking-card-compact" data-org-type="conference">
                         <div class="speaking-image-large">
                             <img src="assets/images/speaking2025/odsceast2025.jpeg" alt="ODSC East 2025">
                         </div>
@@ -1272,8 +1261,7 @@
                                 <span class="year">2025</span>
                             </div>
                             <div class="speaking-type">
-                                <i class="fas fa-chalkboard-teacher"></i>
-                                <span>Workshop</span>
+                                                                <span class="speaking-org-type">Conference</span>
                             </div>
                         </div>
                         <div class="speaking-content">
@@ -1283,7 +1271,7 @@
                             <a href="https://www.linkedin.com/posts/odsc-ai_odsceast-aiagents-financialai-activity-7328002585368358913-X_SU" target="_blank" rel="noopener noreferrer" class="speaking-link">View Details <i class="fas fa-external-link-alt"></i></a>
                         </div>
                     </div>
-                    <div class="speaking-card-compact">
+                    <div class="speaking-card-compact" data-org-type="company">
                         <div class="speaking-image-large">
                             <img src="assets/images/speaking2025/saxobank.jpg" alt="Saxo AI Quest">
                         </div>
@@ -1293,8 +1281,7 @@
                                 <span class="year">2025</span>
                             </div>
                             <div class="speaking-type">
-                                <i class="fas fa-globe"></i>
-                                <span>Summit</span>
+                                                                <span class="speaking-org-type">Company</span>
                             </div>
                         </div>
                         <div class="speaking-content">
@@ -1304,7 +1291,7 @@
                             <a href="https://www.linkedin.com/posts/saxo-as---india_saxoaiquest-innovation-ai-ugcPost-7313836870960914432-y4uZ" target="_blank" rel="noopener noreferrer" class="speaking-link">View Details <i class="fas fa-external-link-alt"></i></a>
                         </div>
                     </div>
-                    <div class="speaking-card-compact">
+                    <div class="speaking-card-compact" data-org-type="company">
                         <div class="speaking-image-large">
                             <img src="assets/images/speaking2025/agentmaven.jpeg" alt="AI Event">
                         </div>
@@ -1314,8 +1301,7 @@
                                 <span class="year">2025</span>
                             </div>
                             <div class="speaking-type">
-                                <i class="fas fa-microphone"></i>
-                                <span>G</span>
+                                                                <span class="speaking-org-type">Company</span>
                             </div>
                         </div>
                         <div class="speaking-content">
@@ -1325,7 +1311,7 @@
                             <a href="https://www.linkedin.com/posts/areganti_one-of-the-things-we-absolutely-wanted-activity-7289847158206341120-Tl9c" target="_blank" rel="noopener noreferrer" class="speaking-link">View Details <i class="fas fa-external-link-alt"></i></a>
                         </div>
                     </div>
-                    <div class="speaking-card-compact">
+                    <div class="speaking-card-compact" data-org-type="company">
                         <div class="speaking-image-large">
                             <img src="assets/images/speaking2025/uipath.jpeg" alt="UiPath Event">
                         </div>
@@ -1335,8 +1321,7 @@
                                 <span class="year">2025</span>
                             </div>
                             <div class="speaking-type">
-                                <i class="fas fa-microphone"></i>
-                                <span>Keynote</span>
+                                                                <span class="speaking-org-type">Company</span>
                             </div>
                         </div>
                         <div class="speaking-content">
@@ -1346,7 +1331,7 @@
                             <a href="https://www.linkedin.com/posts/jayeeta-putatunda_uipath-is-the-best-speakers-spectacular-activity-7298744433464758272-j2-0" target="_blank" rel="noopener noreferrer" class="speaking-link">View Details <i class="fas fa-external-link-alt"></i></a>
                         </div>
                     </div>
-                    <div class="speaking-card-compact">
+                    <div class="speaking-card-compact" data-org-type="company">
                         <div class="speaking-image-large">
                             <img src="assets/images/speaking2025/datacamptutorial.png" alt="DataCamp">
                         </div>
@@ -1356,8 +1341,7 @@
                                 <span class="year">2025</span>
                             </div>
                             <div class="speaking-type">
-                                <i class="fas fa-chalkboard-teacher"></i>
-                                <span>Live Workshop</span>
+                                                                <span class="speaking-org-type">Company</span>
                             </div>
                         </div>
                         <div class="speaking-content">
@@ -1367,7 +1351,7 @@
                             <a href="https://www.linkedin.com/posts/datacampinc_datacamp-ugcPost-7292508146151907329-Zh9F" target="_blank" rel="noopener noreferrer" class="speaking-link">View Details <i class="fas fa-external-link-alt"></i></a>
                         </div>
                     </div>
-                    <div class="speaking-card-compact">
+                    <div class="speaking-card-compact" data-org-type="university">
                         <div class="speaking-image-large">
                             <img src="assets/images/speaking2025/pacefeb.jpeg" alt="AI Insights">
                         </div>
@@ -1377,8 +1361,7 @@
                                 <span class="year">2025</span>
                             </div>
                             <div class="speaking-type">
-                                <i class="fas fa-microphone"></i>
-                                <span>Guest Lecture</span>
+                                                                <span class="speaking-org-type">University</span>
                             </div>
                         </div>
                         <div class="speaking-content">
@@ -1388,7 +1371,7 @@
                             <a href="https://www.linkedin.com/posts/soheylaamirian_aiinsights-aifuture-innovationintech-activity-7291266218555002880-GYjD" target="_blank" rel="noopener noreferrer" class="speaking-link">View Details <i class="fas fa-external-link-alt"></i></a>
                         </div>
                     </div>
-                    <div class="speaking-card-compact">
+                    <div class="speaking-card-compact" data-org-type="ngo">
                         <div class="speaking-image-large">
                             <img src="assets/images/speaking2025/womeninailaunch.jpeg" alt="Women in AI NYC">
                         </div>
@@ -1398,8 +1381,7 @@
                                 <span class="year">2025</span>
                             </div>
                             <div class="speaking-type">
-                                <i class="fas fa-users"></i>
-                                <span>Panel</span>
+                                                                <span class="speaking-org-type">NGO</span>
                             </div>
                         </div>
                         <div class="speaking-content">
@@ -1411,6 +1393,8 @@
                     </div>
                     
                     
+
+                    <p class="speaking-grid-empty-msg" hidden>No engagements match this event type for this year.</p>
                 </div>
             </div>
 
@@ -1422,7 +1406,7 @@
                 </h3>
                 <div class="speaking-grid">
                     <!-- December 2024 -->
-                    <div class="speaking-card-compact">
+                    <div class="speaking-card-compact" data-org-type="conference">
                         <div class="speaking-image-large">
                             <img src="assets/images/speaking2024/AISummitGenAIStage.jpeg" alt="AI Summit Series - CausalRAG">
                         </div>
@@ -1432,8 +1416,7 @@
                                 <span class="year">2024</span>
                             </div>
                             <div class="speaking-type">
-                                <i class="fas fa-microphone"></i>
-                                <span>Keynote</span>
+                                                                <span class="speaking-org-type">Conference</span>
                             </div>
                         </div>
                         <div class="speaking-content">
@@ -1443,7 +1426,7 @@
                             <a href="https://www.linkedin.com/posts/jayeeta-putatunda_keynote-genai-ai-activity-7274805017172230147-IwGa" target="_blank" rel="noopener noreferrer" class="speaking-link">View Details <i class="fas fa-external-link-alt"></i></a>
                         </div>
                     </div>
-                    <div class="speaking-card-compact">
+                    <div class="speaking-card-compact" data-org-type="conference">
                         <div class="speaking-image-large">
                             <img src="assets/images/speaking2024/AISummitAcceleratorStagePanel.jpeg" alt="AI Summit Series - Perfect Pitch Panel">
                         </div>
@@ -1453,8 +1436,7 @@
                                 <span class="year">2024</span>
                             </div>
                             <div class="speaking-type">
-                                <i class="fas fa-users"></i>
-                                <span>Panel</span>
+                                                                <span class="speaking-org-type">Conference</span>
                             </div>
                         </div>
                         <div class="speaking-content">
@@ -1466,7 +1448,7 @@
                     </div>
                     
                     <!-- November 2024 -->
-                    <div class="speaking-card-compact">
+                    <div class="speaking-card-compact" data-org-type="community">
                         <div class="speaking-image-large">
                             <img src="assets/images/speaking2024/GoogleDevFestTroy.jpeg" alt="DevFest 2024">
                         </div>
@@ -1476,8 +1458,7 @@
                                 <span class="year">2024</span>
                             </div>
                             <div class="speaking-type">
-                                <i class="fas fa-microphone"></i>
-                                <span>Keynote</span>
+                                                                <span class="speaking-org-type">Community</span>
                             </div>
                         </div>
                         <div class="speaking-content">
@@ -1487,7 +1468,7 @@
                             <a href="https://www.linkedin.com/posts/jayeeta-putatunda_devfest-devfest2024-buildwithai-activity-7261771090715144192-xaY5" target="_blank" rel="noopener noreferrer" class="speaking-link">View Details <i class="fas fa-external-link-alt"></i></a>
                         </div>
                     </div>
-                    <div class="speaking-card-compact">
+                    <div class="speaking-card-compact" data-org-type="conference">
                         <div class="speaking-image-large">
                             <img src="assets/images/speaking2024/ACM ICAIF P2P Panel.jpeg" alt="ACM ICAIF Panel - Navigating Regulatory Challenges">
                         </div>
@@ -1497,8 +1478,7 @@
                                 <span class="year">2024</span>
                             </div>
                             <div class="speaking-type">
-                                <i class="fas fa-users"></i>
-                                <span>Panel</span>
+                                                                <span class="speaking-org-type">Conference</span>
                             </div>
                         </div>
                         <div class="speaking-content">
@@ -1510,7 +1490,7 @@
                     </div>
                     
                     <!-- October 2024 -->
-                    <div class="speaking-card-compact">
+                    <div class="speaking-card-compact" data-org-type="university">
                         <div class="speaking-image-large">
                             <img src="assets/images/speaking2024/NYUCDSLecture.jpeg" alt="NLP and Data Science Career Tips">
                         </div>
@@ -1520,8 +1500,7 @@
                                 <span class="year">2024</span>
                             </div>
                             <div class="speaking-type">
-                                <i class="fas fa-chalkboard-teacher"></i>
-                                <span>Guest Lecture</span>
+                                                                <span class="speaking-org-type">University</span>
                             </div>
                         </div>
                         <div class="speaking-content">
@@ -1531,7 +1510,7 @@
                             <a href="https://www.linkedin.com/posts/jayeeta-putatunda_nlp-datascience-careertips-activity-7260669082641838080-KhKR" target="_blank" rel="noopener noreferrer" class="speaking-link">View Details <i class="fas fa-external-link-alt"></i></a>
                         </div>
                     </div>
-                    <div class="speaking-card-compact">
+                    <div class="speaking-card-compact" data-org-type="company">
                         <div class="speaking-image-large">
                             <img src="assets/images/speaking2024/CometLigtningAI.jpeg" alt="Comet ML & Lightning AI Event">
                         </div>
@@ -1541,8 +1520,7 @@
                                 <span class="year">2024</span>
                             </div>
                             <div class="speaking-type">
-                                <i class="fas fa-microphone"></i>
-                                <span>Keynote</span>
+                                                                <span class="speaking-org-type">Company</span>
                             </div>
                         </div>
                         <div class="speaking-content">
@@ -1554,7 +1532,7 @@
                     </div>
                     
                     <!-- September 2024 -->
-                    <div class="speaking-card-compact">
+                    <div class="speaking-card-compact" data-org-type="company">
                         <div class="speaking-image-large">
                             <img src="assets/images/speaking2024/AIfestArthur.jpeg" alt="Arthur AI Fest">
                         </div>
@@ -1564,8 +1542,7 @@
                                 <span class="year">2024</span>
                             </div>
                             <div class="speaking-type">
-                                <i class="fas fa-microphone"></i>
-                                <span>Keynote</span>
+                                                                <span class="speaking-org-type">Company</span>
                             </div>
                         </div>
                         <div class="speaking-content">
@@ -1575,7 +1552,7 @@
                             <a href="https://www.linkedin.com/posts/jayeeta-putatunda_research-law-product-activity-7244535351220793344-cGn-" target="_blank" rel="noopener noreferrer" class="speaking-link">View Details <i class="fas fa-external-link-alt"></i></a>
                         </div>
                     </div>
-                    <div class="speaking-card-compact">
+                    <div class="speaking-card-compact" data-org-type="conference">
                         <div class="speaking-image-large">
                             <img src="assets/images/speaking2024/ODSC Europe.jpeg" alt="ODSC Europe">
                         </div>
@@ -1585,8 +1562,7 @@
                                 <span class="year">2024</span>
                             </div>
                             <div class="speaking-type">
-                                <i class="fas fa-microphone"></i>
-                                <span>Keynote</span>
+                                                                <span class="speaking-org-type">Conference</span>
                             </div>
                         </div>
                         <div class="speaking-content">
@@ -1598,7 +1574,7 @@
                     </div>
                     
                     <!-- August 2024 -->
-                    <div class="speaking-card-compact">
+                    <div class="speaking-card-compact" data-org-type="university">
                         <div class="speaking-image-large">
                             <img src="assets/images/speaking2024/columbia.jpeg" alt="NLP and GenAI Guest Lecture" style="object-fit: contain; object-position: center; transform: scale(1.5);">
                         </div>
@@ -1608,8 +1584,7 @@
                                 <span class="year">2024</span>
                             </div>
                             <div class="speaking-type">
-                                <i class="fas fa-chalkboard-teacher"></i>
-                                <span>Guest Lecture</span>
+                                                                <span class="speaking-org-type">University</span>
                             </div>
                         </div>
                         <div class="speaking-content">
@@ -1621,7 +1596,7 @@
                     </div>
                     
                     <!-- June 2024 -->
-                    <div class="speaking-card-compact">
+                    <div class="speaking-card-compact" data-org-type="community">
                         <div class="speaking-image-large">
                             <img src="assets/images/speaking2024/AICAMPMicrosoft.jpeg" alt="AI Camp - RAG and LLMs">
                         </div>
@@ -1631,8 +1606,7 @@
                                 <span class="year">2024</span>
                             </div>
                             <div class="speaking-type">
-                                <i class="fas fa-microphone"></i>
-                                <span>Keynote</span>
+                                                                <span class="speaking-org-type">Community</span>
                             </div>
                         </div>
                         <div class="speaking-content">
@@ -1644,7 +1618,7 @@
                     </div>
                     
                     <!-- May 2024 -->
-                    <div class="speaking-card-compact">
+                    <div class="speaking-card-compact" data-org-type="conference">
                         <div class="speaking-image-large">
                             <img src="assets/images/speaking2024/CometDecodingLLMs.jpeg" alt="Comet ML NLP and LLMs">
                         </div>
@@ -1654,8 +1628,7 @@
                                 <span class="year">2024</span>
                             </div>
                             <div class="speaking-type">
-                                <i class="fas fa-chalkboard-teacher"></i>
-                                <span>Workshop</span>
+                                                                <span class="speaking-org-type">Conference</span>
                             </div>
                         </div>
                         <div class="speaking-content">
@@ -1667,7 +1640,7 @@
                     </div>
                     
                     <!-- April 2024 -->
-                    <div class="speaking-card-compact">
+                    <div class="speaking-card-compact" data-org-type="conference">
                         <div class="speaking-image-large">
                             <img src="assets/images/speaking2024/DCSummit.jpeg" alt="DC Summit">
                         </div>
@@ -1677,8 +1650,7 @@
                                 <span class="year">2024</span>
                             </div>
                             <div class="speaking-type">
-                                <i class="fas fa-microphone"></i>
-                                <span>Keynote</span>
+                                                                <span class="speaking-org-type">Conference</span>
                             </div>
                         </div>
                         <div class="speaking-content">
@@ -1688,6 +1660,8 @@
                             <a href="https://www.linkedin.com/posts/jayeeta-putatunda_dcsummit-opensource-earthday-activity-7188381338742214656-OtVM" target="_blank" rel="noopener noreferrer" class="speaking-link">View Details <i class="fas fa-external-link-alt"></i></a>
                         </div>
                     </div>
+
+                    <p class="speaking-grid-empty-msg" hidden>No engagements match this event type for this year.</p>
                 </div>
             </div>
 
@@ -1699,7 +1673,7 @@
                 </h3>
                 <div class="speaking-grid">
                     <!-- December 2023 -->
-                    <div class="speaking-card-compact">
+                    <div class="speaking-card-compact" data-org-type="conference">
                         <div class="speaking-image-large">
                             <img src="assets/images/speaking2023/AISummit2023panel.jpeg" alt="AI Summit NYC - Privacy Panel">
                         </div>
@@ -1709,8 +1683,7 @@
                                 <span class="year">2023</span>
                             </div>
                             <div class="speaking-type">
-                                <i class="fas fa-users"></i>
-                                <span>Panel</span>
+                                                                <span class="speaking-org-type">Conference</span>
                             </div>
                         </div>
                         <div class="speaking-content">
@@ -1722,7 +1695,7 @@
                     </div>
                     
                     <!-- September 2023 -->
-                    <div class="speaking-card-compact">
+                    <div class="speaking-card-compact" data-org-type="community">
                         <div class="speaking-image-large">
                             <img src="assets/images/speaking2023/RoleofLLMopsHarpreetSahota.png" alt="Role of LLMOps">
                         </div>
@@ -1732,8 +1705,7 @@
                                 <span class="year">2023</span>
                             </div>
                             <div class="speaking-type">
-                                <i class="fas fa-microphone"></i>
-                                <span>Keynote</span>
+                                                                <span class="speaking-org-type">Community</span>
                             </div>
                         </div>
                         <div class="speaking-content">
@@ -1745,7 +1717,7 @@
                     </div>
                     
                     <!-- August 2023 -->
-                    <div class="speaking-card-compact">
+                    <div class="speaking-card-compact" data-org-type="conference">
                         <div class="speaking-image-large">
                             <img src="assets/images/speaking2023/DSSWebinar.jpeg" alt="Data Science Salon Webinar">
                         </div>
@@ -1755,8 +1727,7 @@
                                 <span class="year">2023</span>
                             </div>
                             <div class="speaking-type">
-                                <i class="fas fa-users"></i>
-                                <span>Panel</span>
+                                                                <span class="speaking-org-type">Conference</span>
                             </div>
                         </div>
                         <div class="speaking-content">
@@ -1766,7 +1737,7 @@
                             <a href="https://www.linkedin.com/posts/jayeeta-putatunda_llms-machinelearning-largelanguagemodels-activity-7097584632325357568-fFMg" target="_blank" rel="noopener noreferrer" class="speaking-link">View Details <i class="fas fa-external-link-alt"></i></a>
                         </div>
                     </div>
-                    <div class="speaking-card-compact">
+                    <div class="speaking-card-compact" data-org-type="community">
                         <div class="speaking-image-large">
                             <img src="assets/images/speaking2023/DSSbreakoutsession.png" alt="Data Science Salon Breakout Session">
                         </div>
@@ -1776,8 +1747,7 @@
                                 <span class="year">2023</span>
                             </div>
                             <div class="speaking-type">
-                                <i class="fas fa-microphone"></i>
-                                <span>Breakout Session</span>
+                                                                <span class="speaking-org-type">Community</span>
                             </div>
                         </div>
                         <div class="speaking-content">
@@ -1789,7 +1759,7 @@
                     </div>
                     
                     <!-- July 2023 -->
-                    <div class="speaking-card-compact">
+                    <div class="speaking-card-compact" data-org-type="conference">
                         <div class="speaking-image-large">
                             <img src="assets/images/speaking2023/DSSJulypanel.jpeg" alt="Data Science Salon July Panel">
                         </div>
@@ -1799,8 +1769,7 @@
                                 <span class="year">2023</span>
                             </div>
                             <div class="speaking-type">
-                                <i class="fas fa-users"></i>
-                                <span>Panel</span>
+                                                                <span class="speaking-org-type">Conference</span>
                             </div>
                         </div>
                         <div class="speaking-content">
@@ -1810,7 +1779,7 @@
                             <a href="https://www.linkedin.com/posts/jayeeta-putatunda_dssnyc-llms-generativeai-activity-7090366186495860736-XrDG" target="_blank" rel="noopener noreferrer" class="speaking-link">View Details <i class="fas fa-external-link-alt"></i></a>
                         </div>
                     </div>
-                    <div class="speaking-card-compact">
+                    <div class="speaking-card-compact" data-org-type="community">
                         <div class="speaking-image-large">
                             <img src="assets/images/speaking2023/powerwomangooglenyc.jpeg" alt="Google Developers Event">
                         </div>
@@ -1820,8 +1789,7 @@
                                 <span class="year">2023</span>
                             </div>
                             <div class="speaking-type">
-                                <i class="fas fa-microphone"></i>
-                                <span>Keynote</span>
+                                                                <span class="speaking-org-type">Community</span>
                             </div>
                         </div>
                         <div class="speaking-content">
@@ -1833,7 +1801,7 @@
                     </div>
                     
                     <!-- June 2023 -->
-                    <div class="speaking-card-compact">
+                    <div class="speaking-card-compact" data-org-type="conference">
                         <div class="speaking-image-large">
                             <img src="assets/images/speaking2023/womentechnetwork2023.png" alt="WomenTech Network - NLP in Fintech">
                         </div>
@@ -1843,8 +1811,7 @@
                                 <span class="year">2023</span>
                             </div>
                             <div class="speaking-type">
-                                <i class="fas fa-microphone"></i>
-                                <span>Tech Talk</span>
+                                                                <span class="speaking-org-type">Conference</span>
                             </div>
                         </div>
                         <div class="speaking-content">
@@ -1856,7 +1823,7 @@
                     </div>
                     
                     <!-- April 2023 -->
-                    <div class="speaking-card-compact">
+                    <div class="speaking-card-compact" data-org-type="conference">
                         <div class="speaking-image-large">
                             <img src="assets/images/speaking2023/rework.jpeg" alt="LLaMA and Data Science">
                         </div>
@@ -1866,8 +1833,7 @@
                                 <span class="year">2023</span>
                             </div>
                             <div class="speaking-type">
-                                <i class="fas fa-microphone"></i>
-                                <span>Keynote</span>
+                                                                <span class="speaking-org-type">Conference</span>
                             </div>
                         </div>
                         <div class="speaking-content">
@@ -1879,7 +1845,7 @@
                     </div>
                     
                     <!-- December 2022 -->
-                    <div class="speaking-card-compact">
+                    <div class="speaking-card-compact" data-org-type="conference">
                         <div class="speaking-image-large">
                             <img src="assets/images/speaking2022/DSSnyctalk.jpeg" alt="Data Science Salon NYC">
                         </div>
@@ -1889,8 +1855,7 @@
                                 <span class="year">2022</span>
                             </div>
                             <div class="speaking-type">
-                                <i class="fas fa-microphone"></i>
-                                <span>Keynote</span>
+                                                                <span class="speaking-org-type">Conference</span>
                             </div>
                         </div>
                         <div class="speaking-content">
@@ -1900,7 +1865,7 @@
                             <a href="https://www.linkedin.com/posts/jayeeta-putatunda_dssnyc-chatgpt-datascience-activity-7009235972374601728-A4dB" target="_blank" rel="noopener noreferrer" class="speaking-link">View Details <i class="fas fa-external-link-alt"></i></a>
                         </div>
                     </div>
-                    <div class="speaking-card-compact">
+                    <div class="speaking-card-compact" data-org-type="conference">
                         <div class="speaking-image-large">
                             <img src="assets/images/speaking2022/aisummit2022.jpeg" alt="AI Summit 2022">
                         </div>
@@ -1910,8 +1875,7 @@
                                 <span class="year">2022</span>
                             </div>
                             <div class="speaking-type">
-                                <i class="fas fa-users"></i>
-                                <span>Panel</span>
+                                                                <span class="speaking-org-type">Conference</span>
                             </div>
                         </div>
                         <div class="speaking-content">
@@ -1923,7 +1887,7 @@
                     </div>
                     
                     <!-- August 2022 -->
-                    <div class="speaking-card-compact">
+                    <div class="speaking-card-compact" data-org-type="conference">
                         <div class="speaking-image-large">
                             <img src="assets/images/speaking2022/ai4tallvegas.jpeg" alt="AI4 2022 Las Vegas">
                         </div>
@@ -1933,8 +1897,7 @@
                                 <span class="year">2022</span>
                             </div>
                             <div class="speaking-type">
-                                <i class="fas fa-microphone"></i>
-                                <span>Keynote</span>
+                                                                <span class="speaking-org-type">Conference</span>
                             </div>
                         </div>
                         <div class="speaking-content">
@@ -1946,7 +1909,7 @@
                     </div>
                     
                     <!-- July 2022 -->
-                    <div class="speaking-card-compact">
+                    <div class="speaking-card-compact" data-org-type="conference">
                         <div class="speaking-image-large">
                             <img src="assets/images/speaking2022/ICMLsocial.jpeg" alt="ICML 2022">
                         </div>
@@ -1956,8 +1919,7 @@
                                 <span class="year">2022</span>
                             </div>
                             <div class="speaking-type">
-                                <i class="fas fa-microphone"></i>
-                                <span>Keynote</span>
+                                                                <span class="speaking-org-type">Conference</span>
                             </div>
                         </div>
                         <div class="speaking-content">
@@ -1969,7 +1931,7 @@
                     </div>
                     
                     <!-- June 2022 -->
-                    <div class="speaking-card-compact">
+                    <div class="speaking-card-compact" data-org-type="conference">
                         <div class="speaking-image-large">
                             <img src="assets/images/speaking2022/ODSCEuropeLondon.jpeg" alt="ODSC Europe 2022">
                         </div>
@@ -1979,8 +1941,7 @@
                                 <span class="year">2022</span>
                             </div>
                             <div class="speaking-type">
-                                <i class="fas fa-microphone"></i>
-                                <span>Keynote</span>
+                                                                <span class="speaking-org-type">Conference</span>
                             </div>
                         </div>
                         <div class="speaking-content">
@@ -1992,7 +1953,7 @@
                     </div>
                     
                     <!-- February 2022 -->
-                    <div class="speaking-card-compact">
+                    <div class="speaking-card-compact" data-org-type="university">
                         <div class="speaking-image-large">
                             <img src="assets/images/speaking2022/chaplaincollege.jpeg" alt="Chaplin College Event">
                         </div>
@@ -2002,8 +1963,7 @@
                                 <span class="year">2022</span>
                             </div>
                             <div class="speaking-type">
-                                <i class="fas fa-chalkboard-teacher"></i>
-                                <span>Guest Lecture</span>
+                                                                <span class="speaking-org-type">University</span>
                             </div>
                         </div>
                         <div class="speaking-content">
@@ -2013,6 +1973,8 @@
                             <a href="https://www.linkedin.com/posts/jayeeta-putatunda_dataanalytics-datascience-businessanalytics-activity-6894365245616324609-ANER" target="_blank" rel="noopener noreferrer" class="speaking-link">View Details <i class="fas fa-external-link-alt"></i></a>
                         </div>
                     </div>
+
+                    <p class="speaking-grid-empty-msg" hidden>No engagements match this event type for this year.</p>
                 </div>
             </div>
 
@@ -2024,7 +1986,7 @@
                 </h3>
                 <div class="speaking-grid">
                     <!-- November 2021 -->
-                    <div class="speaking-card-compact">
+                    <div class="speaking-card-compact" data-org-type="conference">
                         <div class="speaking-image-large">
                             <img src="assets/images/speaking2021-2020/odscwest2022.jpeg" alt="ODSC West 2021">
                         </div>
@@ -2034,8 +1996,7 @@
                                 <span class="year">2021</span>
                             </div>
                             <div class="speaking-type">
-                                <i class="fas fa-microphone"></i>
-                                <span>Tech Talk</span>
+                                                                <span class="speaking-org-type">Conference</span>
                             </div>
                         </div>
                         <div class="speaking-content">
@@ -2047,7 +2008,7 @@
                     </div>
                     
                     <!-- October 2021 -->
-                    <div class="speaking-card-compact">
+                    <div class="speaking-card-compact" data-org-type="conference">
                         <div class="speaking-image-large">
                             <img src="assets/images/speaking2021-2020/datainnovationsummitstockholm.jpeg" alt="Data Innovation Summit">
                         </div>
@@ -2057,8 +2018,7 @@
                                 <span class="year">2021</span>
                             </div>
                             <div class="speaking-type">
-                                <i class="fas fa-microphone"></i>
-                                <span>Tech Talk</span>
+                                                                <span class="speaking-org-type">Conference</span>
                             </div>
                         </div>
                         <div class="speaking-content">
@@ -2070,7 +2030,7 @@
                     </div>
                     
                     <!-- September 2021 -->
-                    <div class="speaking-card-compact">
+                    <div class="speaking-card-compact" data-org-type="community">
                         <div class="speaking-image-large">
                             <img src="assets/images/speaking2021-2020/dphi-aiplanet.jpeg" alt="DPhi Session">
                         </div>
@@ -2080,8 +2040,7 @@
                                 <span class="year">2021</span>
                             </div>
                             <div class="speaking-type">
-                                <i class="fas fa-chalkboard-teacher"></i>
-                                <span>Workshop</span>
+                                                                <span class="speaking-org-type">Community</span>
                             </div>
                         </div>
                         <div class="speaking-content">
@@ -2093,7 +2052,7 @@
                     </div>
                     
                     <!-- July 2021 -->
-                    <div class="speaking-card-compact">
+                    <div class="speaking-card-compact" data-org-type="community">
                         <div class="speaking-image-large">
                             <img src="assets/images/speaking2021-2020/talkdatatome-ageofgeeks.jpeg" alt="Machine Learning India">
                         </div>
@@ -2103,8 +2062,7 @@
                                 <span class="year">2021</span>
                             </div>
                             <div class="speaking-type">
-                                <i class="fas fa-microphone"></i>
-                                <span>Interview</span>
+                                                                <span class="speaking-org-type">Community</span>
                             </div>
                         </div>
                         <div class="speaking-content">
@@ -2116,7 +2074,7 @@
                     </div>
                     
                     <!-- June 2021 -->
-                    <div class="speaking-card-compact">
+                    <div class="speaking-card-compact" data-org-type="conference">
                         <div class="speaking-image-large">
                             <img src="assets/images/speaking2021-2020/womenintechworldseries.jpeg" alt="NLP Webinar">
                         </div>
@@ -2126,8 +2084,7 @@
                                 <span class="year">2021</span>
                             </div>
                             <div class="speaking-type">
-                                <i class="fas fa-microphone"></i>
-                                <span>Tech Talk</span>
+                                                                <span class="speaking-org-type">Conference</span>
                             </div>
                         </div>
                         <div class="speaking-content">
@@ -2139,7 +2096,7 @@
                     </div>
                     
                     <!-- March 2021 -->
-                    <div class="speaking-card-compact">
+                    <div class="speaking-card-compact" data-org-type="conference">
                         <div class="speaking-image-large">
                             <img src="assets/images/speaking2021-2020/odscmarch.jpeg" alt="ODSC March 2021">
                         </div>
@@ -2149,8 +2106,7 @@
                                 <span class="year">2021</span>
                             </div>
                             <div class="speaking-type">
-                                <i class="fas fa-microphone"></i>
-                                <span>Keynote</span>
+                                                                <span class="speaking-org-type">Conference</span>
                             </div>
                         </div>
                         <div class="speaking-content">
@@ -2162,7 +2118,7 @@
                     </div>
                     
                     <!-- November 2020 -->
-                    <div class="speaking-card-compact">
+                    <div class="speaking-card-compact" data-org-type="conference">
                         <div class="speaking-image-large">
                             <img src="assets/images/speaking2021-2020/Gitnation-MLconf2020.jpeg" alt="MLCONF EU 2020">
                         </div>
@@ -2172,8 +2128,7 @@
                                 <span class="year">2020</span>
                             </div>
                             <div class="speaking-type">
-                                <i class="fas fa-microphone"></i>
-                                <span>Tech Talk</span>
+                                                                <span class="speaking-org-type">Conference</span>
                             </div>
                         </div>
                         <div class="speaking-content">
@@ -2183,7 +2138,7 @@
                             <a href="https://mlconf.eu/" target="_blank" rel="noopener noreferrer" class="speaking-link">View Details <i class="fas fa-external-link-alt"></i></a>
                         </div>
                     </div>
-                    <div class="speaking-card-compact">
+                    <div class="speaking-card-compact" data-org-type="conference">
                         <div class="speaking-image-large">
                             <img src="assets/images/speaking2021-2020/datasummit2020.jpeg" alt="Data Summit Connect 2020">
                         </div>
@@ -2193,8 +2148,7 @@
                                 <span class="year">2020</span>
                             </div>
                             <div class="speaking-type">
-                                <i class="fas fa-microphone"></i>
-                                <span>Tech Talk</span>
+                                                                <span class="speaking-org-type">Conference</span>
                             </div>
                         </div>
                         <div class="speaking-content">
@@ -2206,7 +2160,7 @@
                     </div>
                     
                     <!-- July 2020 -->
-                    <div class="speaking-card-compact">
+                    <div class="speaking-card-compact" data-org-type="conference">
                         <div class="speaking-image-large">
                             <img src="assets/images/speaking2021-2020/nlpsocialgood-icml2020.jpeg" alt="ICML 2020">
                         </div>
@@ -2216,8 +2170,7 @@
                                 <span class="year">2020</span>
                             </div>
                             <div class="speaking-type">
-                                <i class="fas fa-microphone"></i>
-                                <span>Tech Talk</span>
+                                                                <span class="speaking-org-type">Conference</span>
                             </div>
                         </div>
                         <div class="speaking-content">
@@ -2227,7 +2180,7 @@
                             <a href="https://www.linkedin.com/posts/jayeeta-putatunda_icml2020-nlp-socialgood-activity-6688124687597260800-ZyXb" target="_blank" rel="noopener noreferrer" class="speaking-link">View Details <i class="fas fa-external-link-alt"></i></a>
                         </div>
                     </div>
-                    <div class="speaking-card-compact">
+                    <div class="speaking-card-compact" data-org-type="media">
                         <div class="speaking-image-large">
                             <img src="assets/images/speaking2021-2020/womenwhocodewebinar.jpeg" alt="NLP Webinar">
                         </div>
@@ -2237,8 +2190,7 @@
                                 <span class="year">2020</span>
                             </div>
                             <div class="speaking-type">
-                                <i class="fas fa-video"></i>
-                                <span>Webinar</span>
+                                                                <span class="speaking-org-type">Media</span>
                             </div>
                         </div>
                         <div class="speaking-content">
@@ -2250,7 +2202,7 @@
                     </div>
                     
                     <!-- June 2020 -->
-                    <div class="speaking-card-compact">
+                    <div class="speaking-card-compact" data-org-type="conference">
                         <div class="speaking-image-large">
                             <img src="assets/images/speaking2021-2020/womentechnetwork2020.png" alt="WomenTech Global Conference 2020">
                         </div>
@@ -2260,8 +2212,7 @@
                                 <span class="year">2020</span>
                             </div>
                             <div class="speaking-type">
-                                <i class="fas fa-microphone"></i>
-                                <span>Tech Talk</span>
+                                                                <span class="speaking-org-type">Conference</span>
                             </div>
                         </div>
                         <div class="speaking-content">
@@ -2271,6 +2222,8 @@
                             <a href="https://www.linkedin.com/in/jayeeta-putatunda/details/featured/1590707265622/single-media-viewer/?type=LINK&profileId=ACoAAA7KSSIBmBDg3DpiQT61Cfbw_a1x73rUjk" target="_blank" rel="noopener noreferrer" class="speaking-link">View Details <i class="fas fa-external-link-alt"></i></a>
                         </div>
                     </div>
+
+                    <p class="speaking-grid-empty-msg" hidden>No engagements match this event type for this year.</p>
                 </div>
             </div>
         </div>
